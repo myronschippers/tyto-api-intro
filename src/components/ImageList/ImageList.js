@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 
 class ImageList extends Component {
     render() {
-        const imageListElements = this.props.store.giphyReducer.map((item, index) {
+        const imageListElements = this.props.store.giphyReducer.map((item, index) => {
             return (
                 <li key={index}>
-                    {item.name}
+                    <img src={item.images.downsized_large.url} alt={item.title} />
                 </li>
             );
         });
