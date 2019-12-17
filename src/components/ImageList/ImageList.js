@@ -2,13 +2,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class ImageList extends Component {
-    const imageListElements = this.props.store.
     render() {
+        const imageListElements = this.props.store.giphyReducer.map((item, index) {
+            return (
+                <li key={index}>
+                    {item.name}
+                </li>
+            );
+        });
+
         return (
             <div>
                 <h2>Image Results</h2>
 
-                {imageListElements}
+                <ul>
+                    {imageListElements}
+                </ul>
             </div>
         );
     }
